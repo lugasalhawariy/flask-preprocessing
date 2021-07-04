@@ -1,0 +1,19 @@
+{% extends "pages/layout.html" %}
+
+{% block content %}
+
+<h1 class="mb-4">Split Biasa</h1>
+{% for i in range(len(data)): %}
+<ul class="list-group">
+    <li class="list-group-item">
+        {{ data[i] }}
+    </li>
+</ul>
+{% endfor %}
+
+{% endblock %}
+
+<!-- active navigation -->
+{% block active_split %}
+active
+{% endblock %}

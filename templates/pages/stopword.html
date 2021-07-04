@@ -1,0 +1,19 @@
+{% extends "pages/layout.html" %}
+
+{% block content %}
+
+<h1 class="mb-4">Stop Word NLTK</h1>
+{% for kata in data: %}
+<ul class="list-group">
+    <li class="list-group-item">
+        {{ kata }}
+    </li>
+</ul>
+{% endfor %}
+
+{% endblock %}
+
+<!-- active navigation -->
+{% block active_nltk_stopword %}
+active
+{% endblock %}

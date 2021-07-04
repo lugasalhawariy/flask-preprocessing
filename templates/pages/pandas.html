@@ -1,0 +1,15 @@
+{% extends ("pages/layout.html") %}
+
+{% block content %}
+<h1>Halaman index ku dong</h1>
+{% for table in tables %}
+<table class="table table-hover">
+    {{ table|safe }}
+</table>
+{% endfor %}
+{% endblock %}
+
+<!-- active navigation -->
+{% block active_pandas %}
+active
+{% endblock %}
