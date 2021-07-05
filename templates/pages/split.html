@@ -3,8 +3,19 @@
 {% block content %}
 
 <h1 class="mb-4">Split Biasa</h1>
+
+<!-- input data paragraf -->
+<form action="/split" method="post">
+    <div class="form-group">
+        <label for="paragraf">Masukan Paragraf</label>
+        <input type="text" name="paragraf" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Kirim</button>
+</form>
+
 {% for i in range(len(data)): %}
-<ul class="list-group">
+<ul class="list-group mt-3">
     <li class="list-group-item">
         {{ data[i] }}
     </li>

@@ -2,6 +2,16 @@
 
 {% block content %}
 
+<!-- input data paragraf -->
+<form action="/nltk_split" method="post">
+    <div class="form-group">
+        <label for="paragraf">Masukan Paragraf</label>
+        <input type="text" name="paragraf" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Kirim</button>
+</form>
+
 <h1 class="mb-4">Split NLTK</h1>
 {% for kalimat in data: %}
 <ul class="list-group">

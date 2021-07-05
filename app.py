@@ -20,13 +20,25 @@ def index():
     return render_template('/pages/pandas.html', tables=[df.to_html(classes='data', header="true", index='false')])
 
 
-@app.route('/split')
+@app.route('/split', methods=['GET', 'POST'])
 def split():
+    # kondisi jika ada input
+    if request.method == 'POST':
+        data=request.form['paragraf']
+        data=data.split(".")
+        return render_template('/pages/split.html', data=data, len=len)
+    # kondisi jika tidak ada input
     pisah_kalimat = paragraf.split(".")
     return render_template('/pages/split.html', data=pisah_kalimat, len=len)
 
-@app.route('/nltk_split')
+@app.route('/nltk_split', methods=['GET', 'POST'])
 def nltk_split():
+    # kondisi jika ada input
+    if request.method == 'POST':
+        paragraf = request.form['paragraf']
+        data = tokenize.sent_tokenize(paragraf)
+        return render_template('/pages/nltk-split.html', data=data)
+    # kondisi jika tidak ada input
     pisah_kalimat = tokenize.sent_tokenize(paragraf2)
     return render_template('/pages/nltk-split.html', data=pisah_kalimat)
 
